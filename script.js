@@ -5,7 +5,7 @@ function heroBg(mq){
     const article = document.querySelector(".firstmain article")
 
 
-    const firstd = document.querySelector(".firstd").getBoundingClientRect()
+const firstd = document.querySelector(".firstd").getBoundingClientRect()
 const second1 = document.querySelector(".second1").getBoundingClientRect()
 const maxes = {width:Math.max(second1.width,firstd.width),height:Math.max(second1.height,firstd.height)}
 let clip
