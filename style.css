@@ -185,18 +185,6 @@ header > p{
   position: relative;  
   z-index: 1;                  /* Space between header and grid */
 }
-.choose::before{
-  position: absolute;
-  content: "";
-  height: 100vh;
-  width: 60vw;
-  background-color: #FF0000;
-  filter: blur(200px);
-  right: -30vw;
-  bottom: -50vh;
-  z-index: -1;
-
-}
 
 /* Section header (title + description) */
 .choose > div {
@@ -300,27 +288,21 @@ header > p{
     flex-direction: column;
     gap: 1.5rem;
     align-items: center;
-
+    min-width: 0;
+      background-color: #0e0e10;
 }
-.fleet::before{
-  position: absolute;
-  content: "";
-  height: 100vh;
-  width: 60vw;
-  background-color: #FF0000;
-  filter: blur(200px);
-  left: -30vw;
-  bottom: -50vh;
-  z-index: -1;
 
-}
 .fleet h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
+
 .fleet > div{
     text-align: center;
 }
+
+/* ===================== FLEET 1 ===================== */
+
 .fleet1{
     display: flex;
     flex-direction: row;
@@ -329,7 +311,9 @@ header > p{
     background-color: #171717;
     border-radius: 3rem;
     width: 80vw;
+    min-width: 0;
 }
+
 .fleet1 > div {
     border: 2px solid #e20c26;
     padding: 0.9rem 1.5rem;
@@ -339,12 +323,17 @@ header > p{
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    min-width: 0;
 }
+
 .fleet1 button{
     border: none;
     background-color: transparent;
     color: #ffffff;
 }
+
+/* ===================== CAR PRODUCT ===================== */
+
 .car-product{
     width: 300px;
     min-width: 300px;
@@ -352,33 +341,38 @@ header > p{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    flex-shrink: 0;
 }
+
 .car-product > div:first-child{
     height: 220px;
     overflow: hidden;
     border-radius: 1.5rem;
 }
+
 .car-product > div:first-child img{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
+
 .car-product1{
     display: flex;
     flex-shrink: 0;
     flex-direction: column;
     justify-content: space-between;
     height: 200px;
-
     padding: 20px 20px 5px;
     padding-right: 5px;
     position: relative;
-
     z-index: 1;
 }
-.car-product1 h3 ,.car-product1 section{
+
+.car-product1 h3,
+.car-product1 section{
     margin-right: 15px;
 }
+
 .car-product1::before{
     z-index: -1;
     content: "";
@@ -386,19 +380,19 @@ header > p{
     height: 100%;
     position: absolute;
     top: 50%;
-        border-radius: 1.5rem;
     left: 50%;
-        background-color: #1f1d1d;
+    background-color: #1f1d1d;
+    border-radius: 1.5rem;
     transform: translate(-50%,-50%);
-        clip-path: path("M 0,20 A 20,20,0,0,1 20,0 L 280,0 A 20,20,0,0,1 300,0 L 300,130 A 20,20,0,0,1 280,150 L 205,150 A 20,20,0,0,0 185,170 L 185,180 A 20,20,0,0,1 165,200 L 20,200 A 20,20,0,0,1 0,180 Z");
+    clip-path: path("M 0,20 A 20,20,0,0,1 20,0 L 280,0 A 20,20,0,0,1 300,0 L 300,130 A 20,20,0,0,1 280,150 L 205,150 A 20,20,0,0,0 185,170 L 185,180 A 20,20,0,0,1 165,200 L 20,200 A 20,20,0,0,1 0,180 Z");
 }
+
 .car-product1 > div{
     width: 100%;
     text-align: end;
 }
-.car-product1  button{
-    bottom: 1rem;
-    right: 1rem;
+
+.car-product1 button{
     margin-top: 10px;
     width: 100px;
     height: 35px;
@@ -407,64 +401,68 @@ header > p{
     background-color: #FF0000;
     color: #ffffff;
 }
+
+.car-product1 section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .car-product1 section > div{
     display:flex;
     flex-direction: row;
     gap: 0.3rem;
     font-size: 0.8rem;
     align-items: center;
+}
 
-}
-.car-product1 section{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+/* ===================== FLEET 2 (SCROLL FIXED) ===================== */
+
 .fleet2{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-
+    width: 100%;
+    min-width: 0;
 }
+
 .fleet2 > div{
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
-        overflow-x: auto;
-        width: 100%;
-  max-width: 100%;
-  min-width: 0;
+    overflow-x: auto;
+    width: 100%;
+    min-width: 0;
+    padding-bottom: 1rem;
 }
+
+.fleet2 > div::-webkit-scrollbar {
+      height: 5px;
+}
+.fleet2 > div::-webkit-scrollbar-thumb {
+  background: #62646c;
+  }
+  .fleet2 > div::-webkit-scrollbar-track {
+   background: transparent;
+  }
 .works{
     z-index: 3;
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    gap: 4rem;
     padding: 4rem;
     align-items: center;
-    background-color: #171717;
+    
 }
 
-.works > div:first-child{
-    height: 40vw;
-    width: 40vw;
-    overflow: hidden;
-    border-radius: 1.5rem;
-    border: 2px solid #e20c26;
-}
 
 .works h1{
     text-align: center;
-    margin-bottom: 1.5rem;
 }
 .worksec{
     display: flex;
-    flex-direction: column;
-    padding-left: 50px;
-    padding-bottom: 50px;
-    padding-top: 30px;
-    padding-right: 50px;
+    flex-direction: row;
+    padding: 30px;
     gap: 30px;
     position: relative;
 }
@@ -476,7 +474,25 @@ header > p{
     position: absolute;
     left: 0;
     top: 0;
-    clip-path: polygon(0 0,10px 0,10px 260px,360px 260px, 360px 270px,10px 270px,10px 510px,360px 510px,360px 520px,10px 520px,10px 760px,360px 760px,360px 770px,10px 770px,10px 100%,0 100%);
+    clip-path: polygon(
+    10px calc(100% - 100px), 
+    20px calc(100% - 100px), 
+    20px calc(100% - 10px), 
+    310px calc(100% - 10px),
+    310px calc(100% - 100px),
+    320px calc(100% - 100px),
+    320px calc(100% - 10px),
+    610px calc(100% - 10px),
+    610px calc(100% - 100px),
+    620px calc(100% - 100px),
+    620px calc(100% - 10px),
+    910px calc(100% - 10px),
+    910px calc(100% - 100px),
+    920px calc(100% - 100px),
+    920px 100%,
+    10px 100%
+
+    );
 }
 .works .worksec > div {
     width: 270px;
@@ -494,6 +510,265 @@ header > p{
 .works::before{
     position: absolute;
 }
+
+
+/* Main testimonials container */
+.customer-comment {
+  height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  /* Dark gradient background */
+  background-image: linear-gradient(#000000 30%, #0e0e10);
+}
+
+/* Section heading */
+.customer-comment h2 {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+/* Section description */
+.customer-comment > p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* =========================
+   TESTIMONIALS SCROLL CONTAINER
+========================= */
+
+/* Horizontal scrolling container */
+.customer-comment > section {
+  display: flex;
+  gap: 1.5rem;
+
+  overflow-x: auto;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* =========================
+   INDIVIDUAL TESTIMONIAL CARD
+========================= */
+
+/* Card container */
+.comments {
+  width: 280px;
+  height: 250px;
+  min-width: 280px;
+  min-height: 250px;
+
+  padding: 0 1rem;
+  margin-inline: auto;
+
+  background-color: #0e0e10;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Decorative rotated shapes */
+.comments::before,
+.comments::after {
+  content: "";
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  background-color: #18181b;
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+/* Bottom-left decoration */
+.comments::before {
+  bottom: -50px;
+  left: -50px;
+  transform: rotate(54.66deg);
+}
+
+/* Top-right decoration */
+.comments::after {
+  top: -50px;
+  right: -50px;
+  transform: rotate(-54.66deg);
+}
+
+/* =========================
+   CUSTOMER INFO (AVATAR + NAME)
+========================= */
+
+/* Customer info row */
+.comments > div:first-child {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Avatar container */
+.comments > div:first-child > div:first-child {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Avatar image */
+.comments > div:first-child > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Name & location */
+.comments > div:first-child > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Customer name */
+.comments > div:first-child > div:last-child > p:first-child {
+  font-weight: 500;
+}
+
+/* Customer location */
+.comments > div:first-child > div:last-child > p:last-child {
+  color: #62646c;
+  font-weight: 400;
+}
+
+/* =========================
+   REVIEW CONTENT
+========================= */
+
+/* Review text */
+.comments > p {
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+}
+
+/* Star rating icons */
+.comments > div:nth-child(2) img {
+  height: 15px;
+}
+/* =========================
+   Contact Section Styles
+   Styles the "Get in Touch" section and its form
+========================= */
+.forms {
+  /* Main container for contact section */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 3rem;
+  background-color: #0e0e10;
+}
+
+.forms > h2 {
+  /* Main heading of contact section */
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.forms > p {
+  /* Subtitle/description under heading */
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.forms > section {
+  /* Two-column layout: info + form */
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.forms section > div:first-child {
+  /* Left column: instructions/contact info */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+
+.forms section > div:first-child h2 {
+  /* Sub-heading inside info column */
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.forms section > div:first-child p {
+  /* Info description text */
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+.forms section > div:last-child {
+  /* Right column: contact form */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.3rem;
+}
+
+.forms section > div:last-child > div:first-child {
+  /* Grid for top input fields: name, email, phone */
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem;
+}
+
+.forms section > div:last-child > div:nth-child(2) {
+  /* Full-width message input */
+  width: 100%;
+}
+
+.forms input, .foot2 input {
+  /* Common input text color */
+  color: #ffffff;
+}
+
+.bold {
+  /* Label text style */
+  font-size: 0.9rem;
+}
+
+.forms section input {
+  /* Input fields style */
+  width: 100%;
+  padding: 0.7rem 0;
+  border: none;
+  border-bottom: 1px solid #2f2f37;
+  outline: none;
+  background-color: transparent;
+}
+
+.forms section button {
+  /* Send message button style */
+  padding: 0.7rem 1rem;
+  border: none;
+  background-color: #e20c26;
+  border-radius: 1.3rem;
+  color: inherit;
+  margin-top: 1rem;
+}
+
 
 
 
