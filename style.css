@@ -121,7 +121,7 @@ header > p{
 
 
 }
-.firstd a{
+.firstd a,footer > div a{
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -129,7 +129,7 @@ header > p{
     display: grid;
     place-content: center;
 }
-.firstd a img{
+.firstd a img,footer > div a img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -769,11 +769,81 @@ header > p{
   margin-top: 1rem;
 }
 
+footer{
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+footer::before{
+  height: 60vh;
+  width: 60vw ;
+  position: absolute;
+  left: -20vw;
+  bottom: -20vh;
+  background-color: #ff0000;
+  content: "";
+  border-radius: 40%;
+  filter: blur(150px);
+}
+.foot1{
+ display: grid;
+ place-content: center;
+ position: relative;
+ width: 100%;
+ margin-top: 3rem;
+}
 
+.footimg{
+  width: 60vw;
+  height: auto;
+}
+.foot1img{
+  z-index: -1;
+}
 
+.foot1img,.foot1img1{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: auto;
+  width: 75vw;
+}
+footer > div{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
 
+.foot2{
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
 
+.foot2 nav{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.foot2 p{
+  font-weight: 600;
 
+}
+.foot2 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.foot2 a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
 
 @media (max-width: 576px){
     .firstmain{
