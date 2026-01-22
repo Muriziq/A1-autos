@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -509,6 +510,16 @@ header > p{
 }
 .works::before{
     position: absolute;
+    height: 100px;
+    content: "";
+    background-color: #2f2f37;
+    width: 150%;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -75px;
+    z-index: -1;
+    filter: blur(100px);
+
 }
 
 
@@ -538,6 +549,76 @@ header > p{
   text-align: center;
 }
 
+.hotdeals{
+  padding: 4rem;
+  position: relative;
+  z-index: 3;
+}
+.hotdeals::before{
+  position: absolute;
+  z-index: -1;
+}
+.hotdeals h1{
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+.hotdeals1{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 40vw;
+  font-size: 0.9rem;
+
+}
+.hotdeals1 h3{
+  font-size: 2.3rem;
+  font-family: "Passion One",sans-serif;
+
+}
+.hotdeals2{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+  margin-top: 2rem;
+}
+.hotdeals2 > img{
+  width: 80%;
+  height: auto;
+  z-index: 3;
+}
+.hotdeals2 > div{
+  width:90%;
+  height:100px;
+  border-radius: 50%;
+  background-image: linear-gradient(to top,#171717,#000000);
+  transform: translateY(-50px);
+  
+}
+.hotdeals3{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.hotdeals3 h3{
+  font-size: 2rem;
+  font-family:"Passion One",sans-serif;
+
+}
+.hotdeals3 button{
+  background-color: #e20c26;
+  border-radius: 1.5rem;
+  border:none;
+  color:#ffffff;
+  padding: 1rem 3rem;
+  font-family: "Montserrat";
+  font-weight: 600;
+
+}
 /* =========================
    TESTIMONIALS SCROLL CONTAINER
 ========================= */
@@ -784,17 +865,30 @@ footer::before{
   position: absolute;
   left: -20vw;
   bottom: -20vh;
-  background-color: #ff0000;
+  background-color: #2f2f37;
   content: "";
   border-radius: 40%;
   filter: blur(150px);
+    z-index: -3;
+}
+footer::after{
+  height: 60vh;
+  width: 60vw ;
+  position: absolute;
+  right: 0;
+  bottom: -20vh;
+  background-color: #2f2f37;
+  content: "";
+  border-radius: 40%;
+  filter: blur(150px);
+  z-index: -3;
 }
 .foot1{
  display: grid;
  place-content: center;
  position: relative;
  width: 100%;
- margin-top: 3rem;
+ margin-top:6rem;
 }
 
 .footimg{
@@ -902,8 +996,32 @@ footer > div{
         z-index: 3;
         text-align: center;
     }
+           .choose,.fleet{
+      height: auto;
+      padding: 2rem 1rem;
+      gap: 1.5rem;
+    }
+    .choose section{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      }
+      .fleet1{
+        width: 95%;
+        gap: 1.5rem;
 
+      }
+      .fleet1 button{
+        text-wrap: nowrap;
+      }
+      .fleet1 > div{
+        width: 100%;
+      }
+      .works
 
+    
 
 }
 
