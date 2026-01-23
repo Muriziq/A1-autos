@@ -23,4 +23,15 @@ article.style.clipPath = `path("${clip}")`
     
 }
 
+function hotDeals(mq){
+    let bigScreenImage
+    if(mq.matches){
+        bigScreenImage = "image/download__27_-removebg-preview 1.svg"
+    }else{
+        bigScreenImage = "image/BMW-removebg-preview 1.svg"
+    }
+    const mainImage = document.querySelector(".hotdeals2 img")
+    mainImage.src = bigScreenImage
+}
 heroBg(mq)
+hotDeals(mq)

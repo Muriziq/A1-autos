@@ -465,6 +465,7 @@ header > p{
     flex-direction: row;
     padding: 30px;
     gap: 30px;
+    width: auto;
     position: relative;
 }
 .worksec::before{
@@ -510,15 +511,6 @@ header > p{
 }
 .works::before{
     position: absolute;
-    height: 100px;
-    content: "";
-    background-color: #2f2f37;
-    width: 150%;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: -75px;
-    z-index: -1;
-    filter: blur(100px);
 
 }
 
@@ -606,7 +598,7 @@ header > p{
 }
 .hotdeals3 h3{
   font-size: 2rem;
-  font-family:"Passion One",sans-serif;
+  /* font-family:"Passion One",sans-serif; */
 
 }
 .hotdeals3 button{
@@ -996,7 +988,7 @@ footer > div{
         z-index: 3;
         text-align: center;
     }
-           .choose,.fleet{
+           .choose,.fleet,.works,.hotdeals{
       height: auto;
       padding: 2rem 1rem;
       gap: 1.5rem;
@@ -1019,9 +1011,103 @@ footer > div{
       .fleet1 > div{
         width: 100%;
       }
-      .works
-
-    
+      .worksec{
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+      }
+.works .worksec > div {
+    width: 260px;
+    max-width: 260px;
+}
+.worksec::before{
+    clip-path: polygon(
+        0 110px ,
+        20px 110px,
+        20px 120px,
+        10px 120px,
+        10px 360px,
+        20px 360px,
+        20px 370px,
+        10px 370px,
+        10px 600px,
+        20px 600px,
+        20px 610px,
+        0 610px
+    );
+}
+    .hotdeals1{
+      width: 100%;
+      font-size: 0.8rem;
+    }
+    .hotdeals1 p{
+      width: 90%;
+    }
+    .hotdeals1 h3{
+      font-size: 2rem;
+      font-weight: 550;
+    }
+    .hotdeals2 > img{
+      width: 85%;
+    }
+    .hotdeals2 > div {
+      width: 100%;
+      height: 30px;
+      transform: translateY(-15px);
+    }
+    .hotdeals3 h3{
+      font-size: 1.3rem;
+    }
+    .hotdeals3 button{
+      padding: 1rem 1.5rem;
+    }
+       .customer-comment{
+        padding: 2rem 1rem;
+        gap: 1rem;
+      }
+      .customer-comment h2 , .customer-comment > p{
+        text-align: center;
+      }
+      .customer-comment br,.forms br{
+        display: none;
+      }
+      .customer-comment > section{
+        margin-top: 1rem;
+        width: 100%;
+      }
+            .forms{
+        height: auto;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
+      }
+      .forms > h2,.forms > p,.forms section > div:first-child h2,.forms section > div:first-child p{
+        text-align: center;
+        width: 100%;
+      }
+      
+      .forms > section{
+        display: flex;
+        flex-direction: column;
+      }
+      .footimg{
+        width: 100%;
+      }
+      .foot1{
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      .foot1img,.foot1img1{
+        width: 100%;
+      }
+      .foot2{
+        padding: 1rem;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+      }
 
 }
 
