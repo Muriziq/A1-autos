@@ -22,6 +22,9 @@ body{
     padding: 1rem;
     position: relative;
 }
+.firstmain article > img,.firstd,.f1,.second1,.f2{
+  opacity: 0;
+}
 .firstmain article{
     height: 100%;
     max-width: 100%;
