@@ -568,7 +568,7 @@ header > p{
 }
 .hotdeals1 h3{
   font-size: 2.3rem;
-  font-family: "Passion One",sans-serif;
+font-family: "Londrina",sans-serif;
 
 }
 .hotdeals2{
@@ -1045,9 +1045,10 @@ footer > div{
     }
     .hotdeals1 p{
       width: 90%;
+      
     }
     .hotdeals1 h3{
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 550;
     }
     .hotdeals2 > img{

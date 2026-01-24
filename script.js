@@ -1,4 +1,5 @@
 const mq = window.matchMedia("(max-width:576px)")
+gsap.registerPlugin(ScrollTrigger);
 
 
 function heroBg(mq){
@@ -56,25 +57,34 @@ function hotDeals(mq){
     let bigScreenImage
     if(mq.matches){
         bigScreenImage = [
-            {src:"image/download__27_-removebg-preview 1.svg",heading:"2024 BMW M4 (G82)",price:"$71,800",paragraph:"A high-performance coupe featuring a full Vorsteiner carbon aero package with a vented hood, rear wing, and forged wheels. Powered by BMW’s 3.0L TwinPower Turbo engine, it delivers aggressive style with everyday usability."},
+            {src:"download__27_-removebg-preview 1.svg",heading:"2024 BMW M4 (G82)",price:"$71,800",paragraph:"A high-performance coupe featuring a full Vorsteiner carbon aero package with a vented hood, rear wing, and forged wheels. Powered by BMW’s 3.0L TwinPower Turbo engine, it delivers aggressive style with everyday usability."},
+            {src:"2015_Ford_Mustang_5_0__red__front_low__lights_on-removebg-preview 1.svg",heading:"2015 Ford Mustang",price:"$45,000",paragraph:"The 2015 Ford Mustang 5.0 is a classic muscle car with a powerful V8 engine, offering an exhilarating driving experience and timeless design."},
+            {src:"Accord_2012-removebg-preview 1.svg",heading:"Honda Accord 2012",price:"$517,770",paragraph:"A midsize sedan known for its reliability, comfort, and smooth ride. It offers a spacious interior, good fuel economy, and a choice of efficient 4-cylinder or more powerful V6 engines—making it a practical and dependable daily driver"}
         ]
     }else{
-                bigScreenImage = [
-            {src:"image/BMW-removebg-preview 1.svg",heading:"2024 BMW M4 (G82)",price:"$71,800",paragraph:"A high-performance coupe featuring a full Vorsteiner carbon aero package with a vented hood, rear wing, and forged wheels. Powered by BMW’s 3.0L TwinPower Turbo engine, it delivers aggressive style with everyday usability."},
+            bigScreenImage = [
+            {src:"BMW-removebg-preview 1.svg",heading:"2024 BMW M4 (G82)",price:"$71,800",paragraph:"A high-performance coupe featuring a full Vorsteiner carbon aero package with a vented hood, rear wing, and forged wheels. Powered by BMW’s 3.0L TwinPower Turbo engine, it delivers aggressive style with everyday usability."},
+            {src:"2017_MCLAREN_570S-removebg-preview 1.svg",heading:"2017 McLaren 570S",price:"$85,000",paragraph:"The 2017 570S is ideal for enthusiasts who want real supercar performance and handling without entering hypercar price territory. It shines on spirited drives and track days while still being livable on the road."},
+            {src:"Buggati_Chiron-removebg-preview 1.svg",heading:"Bugatti Chiron",price:"$500,000",paragraph:"The Bugatti Chiron is a hand-built French hypercar from Bugatti Automobiles, designed to push the boundaries of speed, engineering and luxury. It sits at the pinnacle of automotive performance and exclusivity."}
         ]
     }
     const mainImage = document.querySelector(".hotdeals2 img")
     const price = document.querySelector(".hotdeals3 h3")
     const paragraph = document.querySelector(".hotdeals1 p")
     const heading = document.querySelector(".hotdeals1 h3")
-    mainImage.src = bigScreenImage[0].src
+    let hotDealsx = 0
     setInterval(()=>{
+        hotDealsx = (hotDealsx+1) % bigScreenImage.length
+        console.log(hotDealsx,bigScreenImage.length,bigScreenImage)
+        mainImage.src = `image/${bigScreenImage[hotDealsx].src}`
+        price.textContent = bigScreenImage[hotDealsx].price
+        paragraph.textContent = bigScreenImage[hotDealsx].paragraph
+        heading.textContent = bigScreenImage[hotDealsx].heading
         gsap.fromTo(mainImage,{x:"-50vw",opacity:0},{x:0,opacity:1,duration:0.5,ease:"power1.inOut"})
         gsap.fromTo(".hotdeals1",{y:100,opacity:0},{y:0,opacity:1,duration:0.5,ease:"power1.inOut"})
         gsap.fromTo(".hotdeals3 h3",{y:100,opacity:0},{y:0,opacity:1,duration:0.5,ease:"power1.inOut"})
         setTimeout(()=>{
         gsap.fromTo(mainImage,{x:0,opacity:1},{x:"50vw",opacity:0,duration:0.5,ease:"power1.inOut"})
-
         },2500)
     },3000)
 }
