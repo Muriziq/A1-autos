@@ -79,8 +79,34 @@ function hotDeals(mq){
     },3000)
 }
 function gsapAnimations(){
- console.log("yes")
+ document.querySelectorAll(".choose > section > div").forEach(div=>{
+    const divtl = gsap.timeline({scrollTrigger:{trigger: div, start:"top 90%", end:"bottom 60%", scrub:true}})
+    divtl.fromTo(div,{opacity:0,y:150},{opacity:1,y:0,duration:0.7})
+    const divChild = div.children
+    divtl.fromTo(divChild,{opacity:0,y:60},{opacity:1,y:0,stagger:0.2})
+ })
     
+const fleettl = gsap.timeline({scrollTrigger:{trigger: ".fleet", start:"top 80%", end:"bottom 60%"}})
+fleettl.fromTo(".fleet > div",{opacity:0,y:150},{opacity:1,y:0,duration:0.7})
+fleettl.fromTo(".fleet1",{opacity:0,y:100},{opacity:1,y:0,duration:0.7},"-=0.5")
+gsap.utils.toArray(".worksec > div").forEach(div=>{
+    gsap.fromTo(div,{y:150,opacity:0},{y:0,opacity:1,scrollTrigger:{trigger:div, start:"top 80%", end:"bottom 60%",scrub:true}})
+})
+const formstl = gsap.timeline({scrollTrigger:{trigger: ".forms", start:"top 80%", end:"bottom 60%"}})
+formstl.fromTo(".forms > h2",{opacity:0,y:150},{opacity:1,y:0,duration:0.7})
+formstl.fromTo(".forms > p",{opacity:0,y:100},{opacity:1,y:0,duration:0.7},"-=0.5")
+formstl.fromTo(".forms > section > div",{opacity:0,y:150},{opacity:1,y:0,duration:0.7,stagger:0.2})
+
+  const formt = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".forms",
+      start: "top top",
+      end: "bottom top",
+      scrub:true
+    }
+  });
+  formt.fromTo(".forms", {y:0, opacity:1}, {y:-150, opacity:0});
+  gsap.fromTo(".footimg",{y:150,opacity:0},{y:0,opacity:1,scrollTrigger:{trigger:".foot1",start:"top 90%", end:"bottom 60%", scrub:true}})
 
 
 }
