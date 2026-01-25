@@ -1,4 +1,4 @@
-const mq = window.matchMedia("(max-width:576px)")
+const mq = window.matchMedia("(max-width:768px)")
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -116,7 +116,7 @@ formstl.fromTo(".forms > section > div",{opacity:0,y:150},{opacity:1,y:0,duratio
     }
   });
   formt.fromTo(".forms", {y:0, opacity:1}, {y:-150, opacity:0});
-  gsap.fromTo(".footimg",{y:150,opacity:0},{y:0,opacity:1,scrollTrigger:{trigger:".foot1",start:"top 90%", end:"bottom 60%", scrub:true}})
+  gsap.fromTo(".footimg",{y:200,opacity:0},{y:0,opacity:1,scrollTrigger:{trigger:"footer",start:"top bottom", end:"top 50%", scrub:true}})
 
 
 }
@@ -131,3 +131,11 @@ gsapAnimations()
 window.addEventListener("resize",()=>{
       heroBg(mq)
 })
+
+document.querySelectorAll('header a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth' });
+  });
+});

@@ -14,6 +14,21 @@ body{
         color: #ffffff;
 
 }
+button,a{
+  transition: all 0.3s;
+}
+button:hover,button:active{
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.firstd :is(a:hover,a:active),footer > div :is(a:hover,a:active) {
+  background-color: #bb0606;
+  
+}
+.foot2 :is(a:hover,a:active),header :is(a:hover,a:active){
+color: #FF0000;
+}
 .firstmain{
                 height: 100vh;
     width: 100%;
@@ -31,6 +46,14 @@ body{
     width: 100%;
     position: relative;
     overflow: hidden;
+}
+.firstmain .last,.f1 button{
+  width: auto;
+  height: auto;
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  color: #ffffff;
 }
     /* .firstmain article::before{
         height: 100%;
@@ -520,7 +543,6 @@ header > p{
 
 /* Main testimonials container */
 .customer-comment {
-  height: 80vh;
 
   display: flex;
   flex-direction: column;
@@ -744,13 +766,13 @@ font-family: "Londrina",sans-serif;
 ========================= */
 .forms {
   /* Main container for contact section */
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
   align-items: center;
-  padding: 2rem 3rem;
+  padding: 8rem 3rem;
   background-color: #0e0e10;
 }
 
@@ -933,8 +955,23 @@ footer > div{
   color: #ffffff;
   font-size: 0.9rem;
 }
-
-@media (max-width: 576px){
+@media (min-width: 769px) and (max-width: 1024px){
+  header{
+    top: 70px;
+  }
+  .f2{
+    bottom: 4.5rem;
+  }
+}
+@media (min-width:501px) and (max-width: 768px){
+  .f1{
+    width: 100%;
+  }
+.f1 h1{
+  width: 70%;
+}
+}
+@media (max-width: 768px){
     .firstmain{
         height: auto;
         padding:0;
@@ -990,6 +1027,8 @@ footer > div{
         width: 95%;
         z-index: 3;
         text-align: center;
+        align-items: center;
+        justify-content: center;
     }
            .choose,.fleet,.works,.hotdeals{
       height: auto;
