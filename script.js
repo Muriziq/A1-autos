@@ -132,7 +132,7 @@ window.addEventListener("resize",()=>{
       heroBg(mq)
 })
 
-document.querySelectorAll('header a').forEach(link => {
+document.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     document.querySelector(this.getAttribute('href'))
