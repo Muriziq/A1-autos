@@ -68,7 +68,6 @@ if(mq.matches){
             herotl.fromTo(".f2",{opacity:0,x:80},{opacity:1,x:0,duration:0.7},"-=0.5")
                     herotl.fromTo(".second1",{opacity:0,y:80},{opacity:1,y:0,duration:0.7},"-=0.5")
 }else{
-        const herotl = gsap.timeline()
     herotl.fromTo(".firstmain article > img",{opacity:0},{opacity:1,duration:1})
         herotl.fromTo(".second1",{opacity:0,y:80},{opacity:1,y:0,duration:0.7},"-=0.5")
     herotl.fromTo(".firstd",{opacity:0,y:80},{opacity:1,y:0,duration:0.7},"-=0.5")
